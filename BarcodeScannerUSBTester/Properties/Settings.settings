@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BarcodeUtility.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="mqtt_topic_data" Type="System.String" Scope="User">
+      <Value Profile="(Default)">vule/projects/SUZUKI_BH/apps/BARCODE_UTILITY/data/</Value>
+    </Setting>
+    <Setting Name="mqtt_topic_status" Type="System.String" Scope="User">
+      <Value Profile="(Default)">vule/projects/SUZUKI_BH/apps/BARCODE_UTILITY/status/</Value>
+    </Setting>
+    <Setting Name="mqtt_last_connect" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="barcoder_lasr_connect" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CheckRunning" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="isAutoConnect" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="VL Barcode Utility.exe" version="1.0.0.0" publicKeyToken="e9795aade9d9e015" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Resources\icons8_barcode_scanner.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="VL Barcode Utility" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="VL Barcode Utility.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="barcode.dll" size="24576">
+      <assemblyIdentity name="barcode" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>DzgXvg+fB6FvC1nxcM14CcPYLpY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LibUsbDotNet.dll" size="46592">
+      <assemblyIdentity name="LibUsbDotNet" version="1.0.1.9940" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Q2PSbsi8ZeO8ziNNebBMCu5rNOc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MqttLib.dll" size="37888">
+      <assemblyIdentity name="MqttLib" version="1.0.0.1" publicKeyToken="EF471BDAF8321FE9" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>tsv5iiTmo14hgCYnB5/Apy9/Gh4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="505776">
+      <assemblyIdentity name="Newtonsoft.Json" version="12.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>j3JXKtCE7xRf0yhpMK9rcLpiI4Q=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Threading.dll" size="387408">
+      <assemblyIdentity name="System.Threading" version="1.0.2856.102" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>3QZH0lBTnx7FgHN94QLiUVVY9CI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VL Barcode Utility.exe" size="183224">
+      <assemblyIdentity name="VL Barcode Utility" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>KpZkz6AtxvstYHdNjuofqGUfEHA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Resources\icons8_barcode_scanner.ico" size="32038">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>4GsrC44zFjvtKZVppviXTxAYGOQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="VL Barcode Utility.exe.config" size="2514">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IRNnr/Chzqg+5YWbYi0Ar+0MraE=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=SOFTWARETEAM\AnhKhoa" issuerKeyHash="540fcfd9ee91c2416ace5f3e199652dd5b3ed125" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Ut8AFN391qFoFfr1etswSAs+gOo=</DigestValue></Reference></SignedInfo><SignatureValue>d6f2Fw5AdXVeOsGHK1QPtDtb1EttT/eMkURr86+gFM2YD8Q+TfhSTKE93wemDCc/uetM7j48uhyJpjlG2Begx3u/tkkyij2JisJ3vzxbiW5UvHimg8qnvZoNgfFf++ZmdqFb/O1dFUMxq5+TVdFMKQSyeFFZ0B8/2tLMA7ZmCZg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>1GJY4p/Ov7yacVwbavWX9qwd9v3u9xhQl8aB+A/IQ//tnVb/cxm9Ik7c5iNZmxQtJ3bJjxYWTyCyTj6HF4VnInoUtjbxVhOS/4fDjEIQkbrM9fCxQpFCbltA+fj73Pe9GyMG7SzNo+IFuanAxUYuebUQ58d7Hz53oOseV5b2fqk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="ea803e0b4830db7af5fa1568a1d6fddd1400df52" Description="" Url=""><as:assemblyIdentity name="VL Barcode Utility.exe" version="1.0.0.0" publicKeyToken="e9795aade9d9e015" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SOFTWARETEAM\AnhKhoa</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>/yxT8EWiB/jo0KZVpOMEnamZozw=</DigestValue></Reference></SignedInfo><SignatureValue>cLsmsIi9j9img08I4E6Vou13sibG+ns9Jc0DNCKGFnSA2bIPqQhYuQcpy1Vc8fYMihFnzK0fF/ZnsU6boBxQJjQzlA/qqC6U2CJS1JV6JHmw8mGIlwsty8j3RCxpgCcsLmH6WTuJXjUT0JLUradiw40FJnNIhakTHpyXDFH2eiQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>1GJY4p/Ov7yacVwbavWX9qwd9v3u9xhQl8aB+A/IQ//tnVb/cxm9Ik7c5iNZmxQtJ3bJjxYWTyCyTj6HF4VnInoUtjbxVhOS/4fDjEIQkbrM9fCxQpFCbltA+fj73Pe9GyMG7SzNo+IFuanAxUYuebUQ58d7Hz53oOseV5b2fqk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQQrzzrZTynYBCjLu6a/9z6jANBgkqhkiG9w0BAQUFADAzMTEwLwYDVQQDHigAUwBPAEYAVABXAEEAUgBFAFQARQBBAE0AXABBAG4AaABLAGgAbwBhMB4XDTIwMTEwNjA4Mzg0NVoXDTIxMTEwNjE0Mzg0NVowMzExMC8GA1UEAx4oAFMATwBGAFQAVwBBAFIARQBUAEUAQQBNAFwAQQBuAGgASwBoAG8AYTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA1GJY4p/Ov7yacVwbavWX9qwd9v3u9xhQl8aB+A/IQ//tnVb/cxm9Ik7c5iNZmxQtJ3bJjxYWTyCyTj6HF4VnInoUtjbxVhOS/4fDjEIQkbrM9fCxQpFCbltA+fj73Pe9GyMG7SzNo+IFuanAxUYuebUQ58d7Hz53oOseV5b2fqkCAwEAATANBgkqhkiG9w0BAQUFAAOBgQBl78ROmAhF/aS44eAaSej9uWU7rcp5Wk5eG/rpzx5KUq4EoBUT9QLvffAaIoId0Fu9VAuvcq803EG94ZwffRQgyfDhpMFmBn7wJ1nkZekQ0BgVaptpwdPrGqo3pHIidKsM1zABeovUJCm2t8NCdNl95dqdFdPIxcArZSJcUkQlIg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

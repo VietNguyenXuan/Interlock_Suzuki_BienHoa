@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FileXMLInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DevEnvDir>C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\</DevEnvDir>
+  <SolutionDir>E:\TheDung\VuLe\Unilever\PCL\CheckWeigher\Software\CheckWeigherV2\LibUsbDotNet\LibUsbDotNet_Src\</SolutionDir>
+  <SolutionName>LibUsbDotNet</SolutionName>
+  <TargetName>LibUsbDotNet</TargetName>
+  <TargetExt>.dll</TargetExt>
+  <TargetDir>E:\TheDung\VuLe\Unilever\PCL\CheckWeigher\Software\CheckWeigherV2\LibUsbDotNet\LibUsbDotNet_Src\CSLibUsb\bin\Debug\</TargetDir>
+  <TargetPath>E:\TheDung\VuLe\Unilever\PCL\CheckWeigher\Software\CheckWeigherV2\LibUsbDotNet\LibUsbDotNet_Src\CSLibUsb\bin\Debug\LibUsbDotNet.dll</TargetPath>
+  <Version>1.0.1.11395</Version>
+  <Date>03-12-2015</Date>
+  <WinDDKDir />
+</FileXMLInfo>
