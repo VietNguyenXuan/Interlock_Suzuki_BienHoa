@@ -16,12 +16,17 @@ namespace BarcodeScannerUsbUtility
       //FormMain formMain = FormMain.CreateInstance(args);
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      //Application.Run(new FormMain(args));
       Application.Run(FormMain.Instance());
+
+      ////Application.Run(new FormMain());
+      //Application.Run(FormMain.Instance());
       //Application.Run(new FormSystemConFig());
       //Application.Run(new FormChangePass());
       //Application.Run(new FormGeneralConFig());
       //Application.Run(new FormLogin());
+
+
+
     }
   }
 }

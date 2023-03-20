@@ -28,170 +28,190 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.OK = new System.Windows.Forms.Button();
-      this.txtPort = new System.Windows.Forms.TextBox();
-      this.txtIP = new System.Windows.Forms.TextBox();
-      this.txtPid = new System.Windows.Forms.TextBox();
-      this.txtVid = new System.Windows.Forms.TextBox();
-      this.lblPort = new System.Windows.Forms.Label();
-      this.lblHostIp = new System.Windows.Forms.Label();
-      this.lblPid = new System.Windows.Forms.Label();
-      this.lblVid = new System.Windows.Forms.Label();
-      this.groupBarcodeReader = new System.Windows.Forms.GroupBox();
-      this.groupBox2 = new System.Windows.Forms.GroupBox();
-      this.checkBoxAutoConnect = new System.Windows.Forms.CheckBox();
-      this.groupBarcodeReader.SuspendLayout();
-      this.groupBox2.SuspendLayout();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSetting));
+      this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+      this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+      this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+      this.btnSystemConfig = new System.Windows.Forms.Button();
+      this.btnChangePassword = new System.Windows.Forms.Button();
+      this.pictureExit = new System.Windows.Forms.PictureBox();
+      this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+      this.pnlBodySetting = new System.Windows.Forms.Panel();
+      this.tableLayoutPanel1.SuspendLayout();
+      this.tableLayoutPanel2.SuspendLayout();
+      this.tableLayoutPanel3.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureExit)).BeginInit();
+      this.tableLayoutPanel4.SuspendLayout();
       this.SuspendLayout();
       // 
-      // OK
+      // tableLayoutPanel1
       // 
-      this.OK.Location = new System.Drawing.Point(512, 38);
-      this.OK.Name = "OK";
-      this.OK.Size = new System.Drawing.Size(90, 38);
-      this.OK.TabIndex = 4;
-      this.OK.Text = "OK";
-      this.OK.UseVisualStyleBackColor = true;
-      this.OK.Click += new System.EventHandler(this.OK_Click);
+      this.tableLayoutPanel1.BackColor = System.Drawing.Color.LightSlateGray;
+      this.tableLayoutPanel1.ColumnCount = 3;
+      this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 4F));
+      this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 4F));
+      this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
+      this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+      this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+      this.tableLayoutPanel1.RowCount = 3;
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
+      this.tableLayoutPanel1.Size = new System.Drawing.Size(892, 365);
+      this.tableLayoutPanel1.TabIndex = 1;
       // 
-      // txtPort
+      // tableLayoutPanel2
       // 
-      this.txtPort.Location = new System.Drawing.Point(63, 45);
-      this.txtPort.Name = "txtPort";
-      this.txtPort.Size = new System.Drawing.Size(73, 20);
-      this.txtPort.TabIndex = 3;
+      this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(33)))), ((int)(((byte)(72)))));
+      this.tableLayoutPanel2.ColumnCount = 1;
+      this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+      this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 2);
+      this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 7);
+      this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+      this.tableLayoutPanel2.RowCount = 3;
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel2.Size = new System.Drawing.Size(878, 351);
+      this.tableLayoutPanel2.TabIndex = 0;
       // 
-      // txtIP
+      // tableLayoutPanel3
       // 
-      this.txtIP.Location = new System.Drawing.Point(63, 19);
-      this.txtIP.Name = "txtIP";
-      this.txtIP.Size = new System.Drawing.Size(203, 20);
-      this.txtIP.TabIndex = 2;
+      this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.tableLayoutPanel3.ColumnCount = 5;
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.85045F));
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.14955F));
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+      this.tableLayoutPanel3.Controls.Add(this.btnSystemConfig, 2, 0);
+      this.tableLayoutPanel3.Controls.Add(this.btnChangePassword, 0, 0);
+      this.tableLayoutPanel3.Controls.Add(this.pictureExit, 4, 0);
+      this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+      this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+      this.tableLayoutPanel3.RowCount = 1;
+      this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel3.Size = new System.Drawing.Size(872, 54);
+      this.tableLayoutPanel3.TabIndex = 2;
       // 
-      // txtPid
+      // btnSystemConfig
       // 
-      this.txtPid.Location = new System.Drawing.Point(68, 45);
-      this.txtPid.Name = "txtPid";
-      this.txtPid.Size = new System.Drawing.Size(101, 20);
-      this.txtPid.TabIndex = 1;
+      this.btnSystemConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.btnSystemConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+      this.btnSystemConfig.FlatAppearance.BorderSize = 0;
+      this.btnSystemConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSystemConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSystemConfig.ForeColor = System.Drawing.Color.White;
+      this.btnSystemConfig.Location = new System.Drawing.Point(375, 3);
+      this.btnSystemConfig.Name = "btnSystemConfig";
+      this.btnSystemConfig.Size = new System.Drawing.Size(410, 48);
+      this.btnSystemConfig.TabIndex = 0;
+      this.btnSystemConfig.Text = "SYSTEM CONFIG";
+      this.btnSystemConfig.UseVisualStyleBackColor = false;
+      this.btnSystemConfig.Click += new System.EventHandler(this.btnSystemConfig_Click);
       // 
-      // txtVid
+      // btnChangePassword
       // 
-      this.txtVid.Location = new System.Drawing.Point(68, 19);
-      this.txtVid.Name = "txtVid";
-      this.txtVid.Size = new System.Drawing.Size(101, 20);
-      this.txtVid.TabIndex = 0;
+      this.btnChangePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+      this.btnChangePassword.FlatAppearance.BorderSize = 0;
+      this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnChangePassword.ForeColor = System.Drawing.Color.White;
+      this.btnChangePassword.Location = new System.Drawing.Point(3, 3);
+      this.btnChangePassword.Name = "btnChangePassword";
+      this.btnChangePassword.Size = new System.Drawing.Size(346, 48);
+      this.btnChangePassword.TabIndex = 1;
+      this.btnChangePassword.Text = "CHANGE PASSWORD";
+      this.btnChangePassword.UseVisualStyleBackColor = false;
+      this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
       // 
-      // lblPort
+      // pictureExit
       // 
-      this.lblPort.BackColor = System.Drawing.SystemColors.Control;
-      this.lblPort.Location = new System.Drawing.Point(10, 42);
-      this.lblPort.Name = "lblPort";
-      this.lblPort.Size = new System.Drawing.Size(47, 20);
-      this.lblPort.TabIndex = 0;
-      this.lblPort.Text = "PORT";
-      this.lblPort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.pictureExit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.pictureExit.Image = ((System.Drawing.Image)(resources.GetObject("pictureExit.Image")));
+      this.pictureExit.Location = new System.Drawing.Point(811, 3);
+      this.pictureExit.Name = "pictureExit";
+      this.pictureExit.Size = new System.Drawing.Size(58, 48);
+      this.pictureExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.pictureExit.TabIndex = 2;
+      this.pictureExit.TabStop = false;
+      this.pictureExit.Click += new System.EventHandler(this.pictureExit_Click);
       // 
-      // lblHostIp
+      // tableLayoutPanel4
       // 
-      this.lblHostIp.BackColor = System.Drawing.SystemColors.Control;
-      this.lblHostIp.Location = new System.Drawing.Point(10, 16);
-      this.lblHostIp.Name = "lblHostIp";
-      this.lblHostIp.Size = new System.Drawing.Size(47, 20);
-      this.lblHostIp.TabIndex = 0;
-      this.lblHostIp.Text = "IP";
-      this.lblHostIp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.tableLayoutPanel4.ColumnCount = 3;
+      this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+      this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+      this.tableLayoutPanel4.Controls.Add(this.pnlBodySetting, 1, 1);
+      this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 73);
+      this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+      this.tableLayoutPanel4.RowCount = 3;
+      this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+      this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+      this.tableLayoutPanel4.Size = new System.Drawing.Size(872, 275);
+      this.tableLayoutPanel4.TabIndex = 3;
       // 
-      // lblPid
+      // pnlBodySetting
       // 
-      this.lblPid.BackColor = System.Drawing.SystemColors.Control;
-      this.lblPid.Location = new System.Drawing.Point(6, 44);
-      this.lblPid.Name = "lblPid";
-      this.lblPid.Size = new System.Drawing.Size(38, 20);
-      this.lblPid.TabIndex = 0;
-      this.lblPid.Text = "PID";
-      this.lblPid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.pnlBodySetting.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.pnlBodySetting.Location = new System.Drawing.Point(13, 13);
+      this.pnlBodySetting.Name = "pnlBodySetting";
+      this.pnlBodySetting.Size = new System.Drawing.Size(846, 249);
+      this.pnlBodySetting.TabIndex = 0;
       // 
-      // lblVid
+      // FormGeneralConFig
       // 
-      this.lblVid.BackColor = System.Drawing.SystemColors.Control;
-      this.lblVid.Location = new System.Drawing.Point(6, 19);
-      this.lblVid.Name = "lblVid";
-      this.lblVid.Size = new System.Drawing.Size(38, 18);
-      this.lblVid.TabIndex = 0;
-      this.lblVid.Text = "VID";
-      this.lblVid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
-      // groupBarcodeReader
-      // 
-      this.groupBarcodeReader.Controls.Add(this.txtVid);
-      this.groupBarcodeReader.Controls.Add(this.lblVid);
-      this.groupBarcodeReader.Controls.Add(this.txtPid);
-      this.groupBarcodeReader.Controls.Add(this.lblPid);
-      this.groupBarcodeReader.Location = new System.Drawing.Point(12, 12);
-      this.groupBarcodeReader.Name = "groupBarcodeReader";
-      this.groupBarcodeReader.Size = new System.Drawing.Size(190, 83);
-      this.groupBarcodeReader.TabIndex = 5;
-      this.groupBarcodeReader.TabStop = false;
-      this.groupBarcodeReader.Text = "Barcode Reader";
-      // 
-      // groupBox2
-      // 
-      this.groupBox2.Controls.Add(this.checkBoxAutoConnect);
-      this.groupBox2.Controls.Add(this.txtPort);
-      this.groupBox2.Controls.Add(this.lblHostIp);
-      this.groupBox2.Controls.Add(this.txtIP);
-      this.groupBox2.Controls.Add(this.lblPort);
-      this.groupBox2.Location = new System.Drawing.Point(208, 12);
-      this.groupBox2.Name = "groupBox2";
-      this.groupBox2.Size = new System.Drawing.Size(298, 83);
-      this.groupBox2.TabIndex = 6;
-      this.groupBox2.TabStop = false;
-      this.groupBox2.Text = "Network";
-      // 
-      // checkBoxAutoConnect
-      // 
-      this.checkBoxAutoConnect.AutoSize = true;
-      this.checkBoxAutoConnect.Location = new System.Drawing.Point(175, 45);
-      this.checkBoxAutoConnect.Name = "checkBoxAutoConnect";
-      this.checkBoxAutoConnect.Size = new System.Drawing.Size(91, 17);
-      this.checkBoxAutoConnect.TabIndex = 4;
-      this.checkBoxAutoConnect.Text = "Auto Connect";
-      this.checkBoxAutoConnect.UseVisualStyleBackColor = true;
-      // 
-      // FormSetting
-      // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(616, 106);
-      this.Controls.Add(this.groupBox2);
-      this.Controls.Add(this.groupBarcodeReader);
-      this.Controls.Add(this.OK);
-      this.MinimizeBox = false;
-      this.Name = "FormSetting";
+      this.ClientSize = new System.Drawing.Size(892, 365);
+      this.Controls.Add(this.tableLayoutPanel1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+      this.Margin = new System.Windows.Forms.Padding(4);
+      this.MaximizeBox = false;
+      this.Name = "FormGeneralConFig";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "VL Barcode Utility - Settings";
-      this.Load += new System.EventHandler(this.FormSystemConFig_Load);
-      this.groupBarcodeReader.ResumeLayout(false);
-      this.groupBarcodeReader.PerformLayout();
-      this.groupBox2.ResumeLayout(false);
-      this.groupBox2.PerformLayout();
+      this.Load += new System.EventHandler(this.FormGeneralConFig_Load);
+      this.tableLayoutPanel1.ResumeLayout(false);
+      this.tableLayoutPanel2.ResumeLayout(false);
+      this.tableLayoutPanel3.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.pictureExit)).EndInit();
+      this.tableLayoutPanel4.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
 
-        #endregion
-        private System.Windows.Forms.TextBox txtIP;
-        private System.Windows.Forms.TextBox txtPid;
-        private System.Windows.Forms.TextBox txtVid;
-        private System.Windows.Forms.Label lblHostIp;
-        private System.Windows.Forms.Label lblPid;
-        private System.Windows.Forms.Label lblVid;
-        private System.Windows.Forms.TextBox txtPort;
-        private System.Windows.Forms.Label lblPort;
-        private System.Windows.Forms.Button OK;
-    private System.Windows.Forms.GroupBox groupBarcodeReader;
-    private System.Windows.Forms.GroupBox groupBox2;
-    private System.Windows.Forms.CheckBox checkBoxAutoConnect;
+    #endregion
+
+    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+    private System.Windows.Forms.Button btnSystemConfig;
+    private System.Windows.Forms.Button btnChangePassword;
+    private System.Windows.Forms.PictureBox pictureExit;
+    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+    private System.Windows.Forms.Panel pnlBodySetting;
   }
 }

@@ -20,7 +20,6 @@ using BarcodeUtility.Properties;
 
 namespace BarcodeScannerUsbUtility
 {
-
   public partial class FormMain : Form
   {
     public delegate void MethodInvoker();
@@ -45,8 +44,9 @@ namespace BarcodeScannerUsbUtility
     public static Logger logger = new Logger();
 
     #region Singleton Form
+
     private static FormMain _Instance = new FormMain();
-    //private FormMain _FormMain;
+    private FormMain _FormMain;
     public static FormMain Instance()
     {
       if (_Instance == null)
@@ -80,7 +80,7 @@ namespace BarcodeScannerUsbUtility
         }
         catch (ConfigurationException ex)
         {
-          logger.WriteErrorLog(ex,false);
+          logger.WriteErrorLog(ex, false);
         }
       }
 
@@ -135,6 +135,8 @@ namespace BarcodeScannerUsbUtility
       //this.Visible = false;
       //this.Hide();
       //this.ShowInTaskbar = false;
+
+
     }
 
 
@@ -254,7 +256,6 @@ namespace BarcodeScannerUsbUtility
       catch (Exception ex)
       {
         logger.WriteErrorLog(ex,false);
-
       }
     }
 
@@ -272,18 +273,6 @@ namespace BarcodeScannerUsbUtility
 
     }
 
-    private void btClearBarcodeData_Click(object sender, EventArgs e)
-    {
-      this.barcode_reader.SetBarcodeTextData("");
-      txtOutput.Text = "";
-    }
-
-    private void btnHide_Click(object sender, EventArgs e)
-    {
-      //this.Hide();
-      //this.Visible = false;
-      this.WindowState = FormWindowState.Minimized;
-    }
 
     private void FormMain_Load(object sender, EventArgs e)
     {
@@ -309,7 +298,8 @@ namespace BarcodeScannerUsbUtility
     #region Menthod
     public void EnableBtnReconnect()
     {
-      btnConnectNetwork.Enabled = true;
+      btnReconnect.Enabled = true;
+      btnReconnect.ForeColor = Color.White;
     }
     #endregion
 
@@ -323,7 +313,8 @@ namespace BarcodeScannerUsbUtility
       else
       {
         panelNetworkStt.BackColor = Color.Red;
-        btnConnectNetwork.Enabled = true;
+        btnReconnect.Enabled = true;
+        btnReconnect.ForeColor = Color.White;
       }
 
     }
@@ -351,7 +342,8 @@ namespace BarcodeScannerUsbUtility
     private void _Client_ConnectionLost(object sender, EventArgs e)
     {
       panelNetworkStt.BackColor = Color.Red;
-      btnConnectNetwork.Enabled = true;
+      btnReconnect.Enabled = true;
+      btnReconnect.ForeColor = Color.White;
       logger.WriteErrorLog("Error: Network disconnected");
       lastConnectNetwork = DateTime.Now;
       Settings.Default.mqtt_last_connect = DateTime.Now.ToString();
@@ -364,45 +356,13 @@ namespace BarcodeScannerUsbUtility
       PushlishMsg("connected", Settings.Default.mqtt_topic_status, "Publisher");
       PushlishMsg("last_disconnected:" + Settings.Default.mqtt_last_connect, Settings.Default.mqtt_topic_status, "Publisher"); //#mqtt_msg
       panelNetworkStt.BackColor = Color.Green;
-      btnConnectNetwork.Enabled = false;
+      btnReconnect.Enabled = false;
+      btnReconnect.ForeColor = Color.White;
       txtOutput.AppendText("Network connect success! \n");
 
       logger.WriteToLogFile("Network connect success");
     }
-    private void btnConnectNetork_Click(object sender, EventArgs e)
-    {
-      //  if (connStringMqtt != Config.Network.GetConnectionString())
-      //{
-      //if (!_Client.IsConnected)
-      //{
-      //  //_Client.Disconnect();
-      //  mqtt_Reconnect_to_Broker();
-      //}
-      //else 
-      btnConnectNetwork.Enabled = false;
-      Task.Factory.StartNew(() =>
-      {
-        if (_Client.IsConnected)
-        {
-          _Client.Disconnect();
-        }
-        mqtt_Reconnect_to_Broker();
-        Task.WaitAll();
-        if (!_Client.IsConnected)
-          this.Invoke((MethodInvoker)delegate
-          {
-            btnConnectNetwork.Enabled = true;
-          });
-      });
-
-
-      //if (_Client.IsConnected)
-      //{
-      //  _Client.Disconnect();
-      //}
-      //mqtt_Reconnect_to_Broker();
-      //btnConnectNetwork.Enabled = false;
-    }
+   
     private void Mqtt_Connect_To_Broker()
     {
       try
@@ -437,7 +397,16 @@ namespace BarcodeScannerUsbUtility
 
     #endregion
 
-    private void btnSetting_Click(object sender, EventArgs e)
+
+    private void timerMqtt_Tick(object sender, EventArgs e)
+    {
+      if (_Client.IsConnected == false && Settings.Default.isAutoConnect)
+      {
+        btnReconnect_Click(sender, e);
+      }
+    }
+
+    private void btnSetting_Click_1(object sender, EventArgs e)
     {
       //btnSetting.Enabled = false;
       login = new FormLogin();
@@ -457,24 +426,62 @@ namespace BarcodeScannerUsbUtility
       //  catch
       //  { }
       //});
-
-
     }
 
-    private void txtOutput_TextChanged(object sender, EventArgs e)
+    private void btnReconnect_Click(object sender, EventArgs e)
+    {
+      //  if (connStringMqtt != Config.Network.GetConnectionString())
+      //{
+      //if (!_Client.IsConnected)
+      //{
+      //  //_Client.Disconnect();
+      //  mqtt_Reconnect_to_Broker();
+      //}
+      //else 
+      btnReconnect.Enabled = false;
+      Task.Factory.StartNew(() =>
+      {
+        if (_Client.IsConnected)
+        {
+          _Client.Disconnect();
+        }
+        mqtt_Reconnect_to_Broker();
+        Task.WaitAll();
+        if (!_Client.IsConnected)
+          this.Invoke((MethodInvoker)delegate
+          {
+            btnReconnect.Enabled = true;
+          });
+      });
+
+
+      //if (_Client.IsConnected)
+      //{
+      //  _Client.Disconnect();
+      //}
+      //mqtt_Reconnect_to_Broker();
+      //btnConnectNetwork.Enabled = false;
+    }
+
+    private void btnClear_Click(object sender, EventArgs e)
+    {
+      this.barcode_reader.SetBarcodeTextData("");
+      txtOutput.Text = "";
+    }
+
+    private void btnHide_Click_1(object sender, EventArgs e)
+    {
+      //this.Hide();
+      //this.Visible = false;
+      this.WindowState = FormWindowState.Minimized;
+    }
+
+    private void txtOutput_TextChanged_1(object sender, EventArgs e)
     {
       // set the current caret position to the end
       txtOutput.SelectionStart = txtOutput.Text.Length;
       // scroll it automatically
       txtOutput.ScrollToCaret();
-    }
-
-    private void timerMqtt_Tick(object sender, EventArgs e)
-    {
-      if (_Client.IsConnected == false && Settings.Default.isAutoConnect)
-      {
-        btnConnectNetork_Click(sender, e);
-      }
     }
   }
   public static class Config

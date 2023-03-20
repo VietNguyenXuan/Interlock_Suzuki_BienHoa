@@ -17,11 +17,17 @@ namespace BarcodeScannerUsbUtility
       InitializeComponent();
     }
 
-    private void OK_Click(object sender, EventArgs e)
+    private void FormLogin_Load(object sender, EventArgs e)
     {
-      if (this.txtPasswd.Text == CONFIG.ReadSetting("pass").ToString())
+      this.Icon = Resource1.AppIcon;
+      this.StartPosition = FormStartPosition.CenterScreen;
+    }
+
+    private void btnLogIn_Click(object sender, EventArgs e)
+    {
+      if (this.txtPassword.Text == CONFIG.ReadSetting("pass").ToString())
       {
-        FormGeneralConFig gen = new FormGeneralConFig();
+        FormSetting gen = new FormSetting();
         this.Hide();
         gen.ShowDialog();
         this.Close();
@@ -32,10 +38,9 @@ namespace BarcodeScannerUsbUtility
       }
     }
 
-    private void FormLogin_Load(object sender, EventArgs e)
+    private void picExit_Click(object sender, EventArgs e)
     {
-      this.Icon = Resource1.AppIcon;
-      this.StartPosition = FormStartPosition.CenterScreen;
+      this.Close();
     }
   }
 }

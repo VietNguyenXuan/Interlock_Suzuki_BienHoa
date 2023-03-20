@@ -18,32 +18,26 @@ namespace BarcodeScannerUsbUtility
       InitializeComponent();
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    private void FormChangePass_Load(object sender, EventArgs e)
+    {
+      this.Icon = Resource1.AppIcon;
+    }
+
+    private void btnOk_Click_1(object sender, EventArgs e)
     {
       if (txtOldPass.Text != CONFIG.ReadSetting("pass").ToString())
       {
         MessageBox.Show("Wrong password! Please try again");
-      }  
-      else if (this.txtNewPass.Text != this.txtRetype.Text)
+      }
+      else if (this.txtNewPassword.Text != this.txtRetypePassword.Text)
       {
         MessageBox.Show("Retype password and new password do not match! Please try again");
       }
       else
       {
-        CONFIG.UpdateAppSettings("pass", this.txtNewPass.Text.ToString());
+        CONFIG.UpdateAppSettings("pass", this.txtNewPassword.Text.ToString());
         MessageBox.Show("Change password success!");
-        this.Close();
       }
-    }
-
-    private void btnCancel_Click(object sender, EventArgs e)
-    {
-      this.Close();
-    }
-
-    private void FormChangePass_Load(object sender, EventArgs e)
-    {
-      this.Icon = Resource1.AppIcon;
     }
   }
 }

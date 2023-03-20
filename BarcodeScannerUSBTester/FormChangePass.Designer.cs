@@ -28,128 +28,217 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.lblNewPass = new System.Windows.Forms.Label();
-      this.txtNewPass = new System.Windows.Forms.TextBox();
-      this.lblRetypePass = new System.Windows.Forms.Label();
-      this.txtRetype = new System.Windows.Forms.TextBox();
-      this.btnOK = new System.Windows.Forms.Button();
-      this.lblCurrentPass = new System.Windows.Forms.Label();
+      this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+      this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+      this.label1 = new System.Windows.Forms.Label();
+      this.txtNewPassword = new System.Windows.Forms.TextBox();
+      this.label2 = new System.Windows.Forms.Label();
+      this.txtRetypePassword = new System.Windows.Forms.TextBox();
       this.txtOldPass = new System.Windows.Forms.TextBox();
-      this.btnCancel = new System.Windows.Forms.Button();
+      this.label3 = new System.Windows.Forms.Label();
+      this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+      this.btnOk = new System.Windows.Forms.Button();
+      this.tableLayoutPanel1.SuspendLayout();
+      this.tableLayoutPanel2.SuspendLayout();
+      this.tableLayoutPanel3.SuspendLayout();
       this.SuspendLayout();
       // 
-      // lblNewPass
+      // tableLayoutPanel1
       // 
-      this.lblNewPass.BackColor = System.Drawing.SystemColors.Control;
-      this.lblNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblNewPass.Location = new System.Drawing.Point(12, 35);
-      this.lblNewPass.Name = "lblNewPass";
-      this.lblNewPass.Size = new System.Drawing.Size(136, 19);
-      this.lblNewPass.TabIndex = 0;
-      this.lblNewPass.Text = "New Password";
-      this.lblNewPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(33)))), ((int)(((byte)(72)))));
+      this.tableLayoutPanel1.ColumnCount = 1;
+      this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+      this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
+      this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+      this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+      this.tableLayoutPanel1.RowCount = 3;
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.77543F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.22457F));
+      this.tableLayoutPanel1.Size = new System.Drawing.Size(587, 213);
+      this.tableLayoutPanel1.TabIndex = 1;
       // 
-      // txtNewPass
+      // tableLayoutPanel2
       // 
-      this.txtNewPass.Location = new System.Drawing.Point(176, 38);
-      this.txtNewPass.Name = "txtNewPass";
-      this.txtNewPass.Size = new System.Drawing.Size(250, 20);
-      this.txtNewPass.TabIndex = 1;
-      this.txtNewPass.UseSystemPasswordChar = true;
+      this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.tableLayoutPanel2.ColumnCount = 2;
+      this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+      this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+      this.tableLayoutPanel2.Controls.Add(this.txtNewPassword, 1, 2);
+      this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
+      this.tableLayoutPanel2.Controls.Add(this.txtRetypePassword, 1, 4);
+      this.tableLayoutPanel2.Controls.Add(this.txtOldPass, 1, 0);
+      this.tableLayoutPanel2.Controls.Add(this.label3, 0, 4);
+      this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+      this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+      this.tableLayoutPanel2.RowCount = 5;
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+      this.tableLayoutPanel2.Size = new System.Drawing.Size(581, 149);
+      this.tableLayoutPanel2.TabIndex = 0;
       // 
-      // lblRetypePass
+      // label1
       // 
-      this.lblRetypePass.BackColor = System.Drawing.SystemColors.Control;
-      this.lblRetypePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblRetypePass.Location = new System.Drawing.Point(12, 61);
-      this.lblRetypePass.Name = "lblRetypePass";
-      this.lblRetypePass.Size = new System.Drawing.Size(136, 19);
-      this.lblRetypePass.TabIndex = 0;
-      this.lblRetypePass.Text = "Retype Password";
-      this.lblRetypePass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.label1.AutoSize = true;
+      this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label1.ForeColor = System.Drawing.Color.White;
+      this.label1.Location = new System.Drawing.Point(3, 0);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(194, 45);
+      this.label1.TabIndex = 0;
+      this.label1.Text = "Current Password";
+      this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
-      // txtRetype
+      // txtNewPassword
       // 
-      this.txtRetype.Location = new System.Drawing.Point(176, 62);
-      this.txtRetype.Name = "txtRetype";
-      this.txtRetype.Size = new System.Drawing.Size(250, 20);
-      this.txtRetype.TabIndex = 2;
-      this.txtRetype.UseSystemPasswordChar = true;
+      this.txtNewPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.txtNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(33)))), ((int)(((byte)(72)))));
+      this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtNewPassword.ForeColor = System.Drawing.Color.White;
+      this.txtNewPassword.Location = new System.Drawing.Point(203, 55);
+      this.txtNewPassword.Name = "txtNewPassword";
+      this.txtNewPassword.Size = new System.Drawing.Size(375, 38);
+      this.txtNewPassword.TabIndex = 4;
+      this.txtNewPassword.UseSystemPasswordChar = true;
       // 
-      // btnOK
+      // label2
       // 
-      this.btnOK.Location = new System.Drawing.Point(324, 88);
-      this.btnOK.Name = "btnOK";
-      this.btnOK.Size = new System.Drawing.Size(102, 28);
-      this.btnOK.TabIndex = 3;
-      this.btnOK.Text = "OK";
-      this.btnOK.UseVisualStyleBackColor = true;
-      this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+      this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.label2.AutoSize = true;
+      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label2.ForeColor = System.Drawing.Color.White;
+      this.label2.Location = new System.Drawing.Point(3, 52);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(194, 45);
+      this.label2.TabIndex = 1;
+      this.label2.Text = "New Password";
+      this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
-      // lblCurrentPass
+      // txtRetypePassword
       // 
-      this.lblCurrentPass.BackColor = System.Drawing.SystemColors.Control;
-      this.lblCurrentPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblCurrentPass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.lblCurrentPass.Location = new System.Drawing.Point(12, 9);
-      this.lblCurrentPass.Name = "lblCurrentPass";
-      this.lblCurrentPass.Size = new System.Drawing.Size(136, 19);
-      this.lblCurrentPass.TabIndex = 0;
-      this.lblCurrentPass.Text = "Current Password";
-      this.lblCurrentPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.txtRetypePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.txtRetypePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(33)))), ((int)(((byte)(72)))));
+      this.txtRetypePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtRetypePassword.ForeColor = System.Drawing.Color.White;
+      this.txtRetypePassword.Location = new System.Drawing.Point(203, 107);
+      this.txtRetypePassword.Name = "txtRetypePassword";
+      this.txtRetypePassword.Size = new System.Drawing.Size(375, 38);
+      this.txtRetypePassword.TabIndex = 5;
+      this.txtRetypePassword.UseSystemPasswordChar = true;
       // 
       // txtOldPass
       // 
-      this.txtOldPass.Location = new System.Drawing.Point(176, 12);
+      this.txtOldPass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.txtOldPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(33)))), ((int)(((byte)(72)))));
+      this.txtOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtOldPass.ForeColor = System.Drawing.Color.White;
+      this.txtOldPass.Location = new System.Drawing.Point(203, 3);
       this.txtOldPass.Name = "txtOldPass";
-      this.txtOldPass.Size = new System.Drawing.Size(250, 20);
-      this.txtOldPass.TabIndex = 0;
+      this.txtOldPass.Size = new System.Drawing.Size(375, 38);
+      this.txtOldPass.TabIndex = 3;
       this.txtOldPass.UseSystemPasswordChar = true;
       // 
-      // btnCancel
+      // label3
       // 
-      this.btnCancel.Location = new System.Drawing.Point(216, 88);
-      this.btnCancel.Name = "btnCancel";
-      this.btnCancel.Size = new System.Drawing.Size(102, 28);
-      this.btnCancel.TabIndex = 4;
-      this.btnCancel.Text = "Cancel";
-      this.btnCancel.UseVisualStyleBackColor = true;
-      this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+      this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.label3.AutoSize = true;
+      this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label3.ForeColor = System.Drawing.Color.White;
+      this.label3.Location = new System.Drawing.Point(3, 104);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(194, 45);
+      this.label3.TabIndex = 2;
+      this.label3.Text = "Retype Password";
+      this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      // 
+      // tableLayoutPanel3
+      // 
+      this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.tableLayoutPanel3.ColumnCount = 4;
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+      this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+      this.tableLayoutPanel3.Controls.Add(this.btnOk, 3, 0);
+      this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 168);
+      this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+      this.tableLayoutPanel3.RowCount = 1;
+      this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+      this.tableLayoutPanel3.Size = new System.Drawing.Size(581, 42);
+      this.tableLayoutPanel3.TabIndex = 1;
+      // 
+      // btnOk
+      // 
+      this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.btnOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+      this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnOk.ForeColor = System.Drawing.Color.White;
+      this.btnOk.Location = new System.Drawing.Point(458, 3);
+      this.btnOk.Name = "btnOk";
+      this.btnOk.Size = new System.Drawing.Size(120, 36);
+      this.btnOk.TabIndex = 1;
+      this.btnOk.Text = "OK";
+      this.btnOk.UseVisualStyleBackColor = false;
+      this.btnOk.Click += new System.EventHandler(this.btnOk_Click_1);
       // 
       // FormChangePass
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(440, 130);
-      this.Controls.Add(this.btnCancel);
-      this.Controls.Add(this.btnOK);
-      this.Controls.Add(this.txtRetype);
-      this.Controls.Add(this.txtOldPass);
-      this.Controls.Add(this.txtNewPass);
-      this.Controls.Add(this.lblRetypePass);
-      this.Controls.Add(this.lblCurrentPass);
-      this.Controls.Add(this.lblNewPass);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.ClientSize = new System.Drawing.Size(587, 213);
+      this.Controls.Add(this.tableLayoutPanel1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+      this.Margin = new System.Windows.Forms.Padding(4);
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "FormChangePass";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "VL Barcode Utility - Change Password";
       this.Load += new System.EventHandler(this.FormChangePass_Load);
+      this.tableLayoutPanel1.ResumeLayout(false);
+      this.tableLayoutPanel2.ResumeLayout(false);
+      this.tableLayoutPanel2.PerformLayout();
+      this.tableLayoutPanel3.ResumeLayout(false);
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
-        #endregion
+    #endregion
 
-        private System.Windows.Forms.Label lblNewPass;
-        private System.Windows.Forms.TextBox txtNewPass;
-        private System.Windows.Forms.Label lblRetypePass;
-        private System.Windows.Forms.TextBox txtRetype;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Label lblCurrentPass;
-        private System.Windows.Forms.TextBox txtOldPass;
-    private System.Windows.Forms.Button btnCancel;
+    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.TextBox txtNewPassword;
+    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.TextBox txtRetypePassword;
+    private System.Windows.Forms.TextBox txtOldPass;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+    private System.Windows.Forms.Button btnOk;
   }
 }
