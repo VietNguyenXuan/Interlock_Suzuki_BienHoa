@@ -55,7 +55,6 @@ namespace BarcodeScannerUsbUtility.Controls
 
     public static void UpdateAppSettings(string key, string value)
     {
-
       try
       {
         var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);

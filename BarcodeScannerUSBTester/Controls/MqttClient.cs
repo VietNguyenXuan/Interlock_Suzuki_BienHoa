@@ -18,9 +18,7 @@ namespace BarcodeScannerUsbUtility.Controls
       _clientId = clientId;
       _client = MqttClientFactory.CreateClient(_connString, _clientId);
       _client.Connect(true);
-      
     }
-
 
     public int Publish(MqttParcel mqttParcel )
     {
@@ -41,7 +39,6 @@ namespace BarcodeScannerUsbUtility.Controls
     #region IDisposable Patern
     private bool disposedValue;
     
-
     protected virtual void Dispose(bool disposing)
     {
       if (!disposedValue)

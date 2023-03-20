@@ -155,7 +155,6 @@ namespace BarcodeScannerUsbUtility
       barcode.PID = my_barcode_PID;// "0x0901";
       //add to list
       list_barcode_scanner.Add(barcode);
-
       return list_barcode_scanner;
     }
 
@@ -230,13 +229,13 @@ namespace BarcodeScannerUsbUtility
         if (IsFoundCorrectBarcode == false)
         {
           this.barcode_reader.SetConnect(false);
-          this.panel1.BackColor = Color.Red;
+          this.btnBarCode.BackColor = Color.Red;
 
         }
         else
         {
           this.barcode_reader.SetConnect(true);
-          this.panel1.BackColor = Color.Green;
+          this.btnBarCode.BackColor = Color.Green;
         }
         if (IsFoundCorrectBarcode != pIsFoundCorrectBarcode)
         {
@@ -264,11 +263,11 @@ namespace BarcodeScannerUsbUtility
     {
       if (IsConnect == false)
       {
-        this.panel1.BackColor = Color.Red;//.SetConnect_Barcode(DataTypes.COMM_STATUS.DISCONNECT);
+        this.btnBarCode.BackColor = Color.Red;//.SetConnect_Barcode(DataTypes.COMM_STATUS.DISCONNECT);
       }
       else
       {
-        this.panel1.BackColor = Color.Green;//communicationStatusByLed1.SetConnect_Barcode(DataTypes.COMM_STATUS.CONNECT);
+        this.btnBarCode.BackColor = Color.Green;//communicationStatusByLed1.SetConnect_Barcode(DataTypes.COMM_STATUS.CONNECT);
       }
 
     }
@@ -280,9 +279,53 @@ namespace BarcodeScannerUsbUtility
       mqtt_timer_connect.Enabled = true;
       this.Icon = Resources.AppIcon;
       txtOutput.AutoWordSelection = true;
-      Task.Factory.StartNew(() => { MessageBox.Show("Barcode Utility started!", "VL Barcode Utility", MessageBoxButtons.OK, MessageBoxIcon.Information); });
+      //Task.Factory.StartNew(() => { MessageBox.Show("Barcode Utility started!", "VL Barcode Utility", MessageBoxButtons.OK, MessageBoxIcon.Information); });
       timerMqtt.Interval = 5000;
       timerMqtt.Enabled = Settings.Default.isAutoConnect;
+
+
+      // Xóa dòng cuối dgv
+      dgvMode.AllowUserToAddRows= false;
+
+
+      string[] name = { "Chassis", "Truck", "Other" };
+      for (int i = 0; i < name.Length; i++)
+      {
+        // Tạo một hàng mới
+        DataGridViewRow row = new DataGridViewRow();
+        // Tạo một ô dữ liệu kiểu nút nhấn
+        DataGridViewButtonCell btnCell = new DataGridViewButtonCell();
+        btnCell.Value = name[i];
+        //btnCell.ColumnIndex = Color.FromArgb(8, 46, 112);
+
+        // Thêm ô dữ liệu kiểu nút nhấn vào hàng
+        row.Cells.Add(btnCell);
+        
+        
+        // Thêm hàng mới vào DataGridView
+        dgvMode.Rows.Add(row);
+        dgvMode.Rows[i].Height = 80;
+      }
+
+
+
+
+
+
+
+      //// Tạo một hàng mới
+      //DataGridViewRow row2 = new DataGridViewRow();
+      //// Tạo một ô dữ liệu kiểu nút nhấn
+      //DataGridViewButtonCell buttonCell2 = new DataGridViewButtonCell();
+      //buttonCell2.Value = "Nút nhấn";
+      //// Thêm ô dữ liệu kiểu nút nhấn vào hàng
+      //row2.Cells.Add(buttonCell2);
+      //// Thêm hàng mới vào DataGridView
+      //dgvMode.Rows.Add(row2);
+
+
+
+      lblClock.Text = DateTime.Now.ToString() ;
     }
     private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
     {
@@ -298,8 +341,8 @@ namespace BarcodeScannerUsbUtility
     #region Menthod
     public void EnableBtnReconnect()
     {
-      btnReconnect.Enabled = true;
-      btnReconnect.ForeColor = Color.White;
+      btnConnectNetwork.Enabled = true;
+      btnConnectNetwork.ForeColor = Color.White;
     }
     #endregion
 
@@ -308,13 +351,13 @@ namespace BarcodeScannerUsbUtility
     {
       if (_Client.IsConnected)
       {
-        panelNetworkStt.BackColor = Color.Green;
+        btnConnectNetwork.BackColor = Color.Green;
       }
       else
       {
-        panelNetworkStt.BackColor = Color.Red;
-        btnReconnect.Enabled = true;
-        btnReconnect.ForeColor = Color.White;
+        btnConnectNetwork.BackColor = Color.Red;
+        btnConnectNetwork.Enabled = true;
+        btnConnectNetwork.ForeColor = Color.White;
       }
 
     }
@@ -341,9 +384,9 @@ namespace BarcodeScannerUsbUtility
     }
     private void _Client_ConnectionLost(object sender, EventArgs e)
     {
-      panelNetworkStt.BackColor = Color.Red;
-      btnReconnect.Enabled = true;
-      btnReconnect.ForeColor = Color.White;
+      btnConnectNetwork.BackColor = Color.Red;
+      btnConnectNetwork.Enabled = true;
+      btnConnectNetwork.ForeColor = Color.White;
       logger.WriteErrorLog("Error: Network disconnected");
       lastConnectNetwork = DateTime.Now;
       Settings.Default.mqtt_last_connect = DateTime.Now.ToString();
@@ -355,9 +398,9 @@ namespace BarcodeScannerUsbUtility
     {
       PushlishMsg("connected", Settings.Default.mqtt_topic_status, "Publisher");
       PushlishMsg("last_disconnected:" + Settings.Default.mqtt_last_connect, Settings.Default.mqtt_topic_status, "Publisher"); //#mqtt_msg
-      panelNetworkStt.BackColor = Color.Green;
-      btnReconnect.Enabled = false;
-      btnReconnect.ForeColor = Color.White;
+      btnConnectNetwork.BackColor = Color.Green;
+      btnConnectNetwork.Enabled = false;
+      btnConnectNetwork.ForeColor = Color.White;
       txtOutput.AppendText("Network connect success! \n");
 
       logger.WriteToLogFile("Network connect success");
@@ -402,11 +445,47 @@ namespace BarcodeScannerUsbUtility
     {
       if (_Client.IsConnected == false && Settings.Default.isAutoConnect)
       {
-        btnReconnect_Click(sender, e);
+        btnConnectNetwork_Click(sender, e);
       }
     }
 
-    private void btnSetting_Click_1(object sender, EventArgs e)
+
+    private void btnConnectNetwork_Click(object sender, EventArgs e)
+    {
+      //  if (connStringMqtt != Config.Network.GetConnectionString())
+      //{
+      //if (!_Client.IsConnected)
+      //{
+      //  //_Client.Disconnect();
+      //  mqtt_Reconnect_to_Broker();
+      //}
+      //else 
+      btnConnectNetwork.Enabled = false;
+      Task.Factory.StartNew(() =>
+      {
+        if (_Client.IsConnected)
+        {
+          _Client.Disconnect();
+        }
+        mqtt_Reconnect_to_Broker();
+        Task.WaitAll();
+        if (!_Client.IsConnected)
+          this.Invoke((MethodInvoker)delegate
+          {
+            btnConnectNetwork.Enabled = true;
+          });
+      });
+
+
+      //if (_Client.IsConnected)
+      //{
+      //  _Client.Disconnect();
+      //}
+      //mqtt_Reconnect_to_Broker();
+      //btnConnectNetwork.Enabled = false;
+    }
+
+    private void btnSetting_Click(object sender, EventArgs e)
     {
       //btnSetting.Enabled = false;
       login = new FormLogin();
@@ -428,60 +507,39 @@ namespace BarcodeScannerUsbUtility
       //});
     }
 
-    private void btnReconnect_Click(object sender, EventArgs e)
-    {
-      //  if (connStringMqtt != Config.Network.GetConnectionString())
-      //{
-      //if (!_Client.IsConnected)
-      //{
-      //  //_Client.Disconnect();
-      //  mqtt_Reconnect_to_Broker();
-      //}
-      //else 
-      btnReconnect.Enabled = false;
-      Task.Factory.StartNew(() =>
-      {
-        if (_Client.IsConnected)
-        {
-          _Client.Disconnect();
-        }
-        mqtt_Reconnect_to_Broker();
-        Task.WaitAll();
-        if (!_Client.IsConnected)
-          this.Invoke((MethodInvoker)delegate
-          {
-            btnReconnect.Enabled = true;
-          });
-      });
-
-
-      //if (_Client.IsConnected)
-      //{
-      //  _Client.Disconnect();
-      //}
-      //mqtt_Reconnect_to_Broker();
-      //btnConnectNetwork.Enabled = false;
-    }
-
-    private void btnClear_Click(object sender, EventArgs e)
+    private void btnClear_Click_1(object sender, EventArgs e)
     {
       this.barcode_reader.SetBarcodeTextData("");
       txtOutput.Text = "";
     }
 
-    private void btnHide_Click_1(object sender, EventArgs e)
+    private void picExit_Click(object sender, EventArgs e)
     {
-      //this.Hide();
-      //this.Visible = false;
-      this.WindowState = FormWindowState.Minimized;
+      this.Close();
     }
 
-    private void txtOutput_TextChanged_1(object sender, EventArgs e)
+    private void txtOutput_TextChanged(object sender, EventArgs e)
     {
       // set the current caret position to the end
       txtOutput.SelectionStart = txtOutput.Text.Length;
       // scroll it automatically
       txtOutput.ScrollToCaret();
+    }
+
+    private void picEnlarge_Click(object sender, EventArgs e)
+    {
+      this.WindowState = FormWindowState.Maximized;
+    }
+
+
+    private void picNomal_Click(object sender, EventArgs e)
+    {
+      this.WindowState = FormWindowState.Normal;
+    }
+
+    private void picMin_Click(object sender, EventArgs e)
+    {
+      this.WindowState = FormWindowState.Minimized;
     }
   }
   public static class Config
@@ -517,7 +575,6 @@ namespace BarcodeScannerUsbUtility
         Config.pass = appSettings["pass"];
       }
     }
-
 
   }
 }
